@@ -1,5 +1,9 @@
 import React from 'react';
 import { Tab, Tabs, AppBar } from '@material-ui/core';
+import Character from './Character.jsx';
+import Encounters from './Encounters.jsx';
+import Miscellaneous from './Miscellaneous.jsx';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -8,7 +12,6 @@ class App extends React.Component {
       tab: 0
     }
     this.handleTabs = this.handleTabs.bind(this);
-    this.Tab1 = this.Tab1.bind(this);
   };
 
   componentDidMount() {
@@ -16,36 +19,11 @@ class App extends React.Component {
   }
 
   handleTabs(e, value) {
-    console.log(value);
+    // console.log(value);
     this.setState({
       tab: value
     });
   }
-
-  Tab1() {
-    if (this.state.tab === 0) {
-      return(<h1>Tab 1</h1>);
-    } else {
-      return(<div></div>)
-    }
-  }
-
-  Tab2() {
-    if (this.state.tab === 1) {
-      return(<h1>Tab 2</h1>);
-    } else {
-      return(<div></div>)
-    }
-  }
-
-  Tab3() {
-    if (this.state.tab === 2) {
-      return(<h1>Tab 3</h1>);
-    } else {
-      return(<div></div>)
-    }
-  }
-
 
 
   render() {
@@ -59,6 +37,19 @@ class App extends React.Component {
             <Tab label='Miscellaneous'/>
           </Tabs>
         </AppBar>
+{/* Spaced out for clarity while coding */}
+        <Character
+        tab={this.state.tab}
+        />
+
+        <Encounters
+          tab={this.state.tab}
+        />
+
+        <Miscellaneous
+          tab={this.state.tab}
+        />
+
       </div>
     );
   }

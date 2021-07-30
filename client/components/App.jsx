@@ -11,10 +11,15 @@ class App extends React.Component {
     super(props);
     this.state = {
       tab: 0,
-      creationPopup: false
+      creationPopup: false,
+      creation: {
+        race: null
+      }
     }
     this.handleTabs = this.handleTabs.bind(this);
     this.toggleCreationPopup = this.toggleCreationPopup.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   };
 
   componentDidMount() {
@@ -33,6 +38,25 @@ class App extends React.Component {
     });
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log('submit pressed!')
+    // console.log(e.target.value);
+  }
+
+  handleChange(e) {
+    e.preventDefault();
+    var value = e.target.value;
+    var name = e.target.name;
+    console.log(value, name);
+    console.log(this.state.creation[name])
+    this.state.creation[name] = value;
+    this.setState({
+      creation:this.state.creation
+    });
+    console.log('state:', this.state);
+  }
+
 
   render() {
     return(
@@ -49,6 +73,9 @@ class App extends React.Component {
         <Creation
         creationPopup={this.state.creationPopup}
         toggleCreationPopup={this.toggleCreationPopup}
+        handleSubmit={this.handleSubmit}
+        handleChange={this.handleChange}
+        creation={this.state.creation}
         />
 
         <Character

@@ -14,10 +14,11 @@ const Creation = (props) => {
                   <form>
                     <label for="race">Choose a Race:</label>
                     <select name="race" id="race">
+                      <option value="" selected disabled hidden>Choose race</option>
                       <optgroup label="Human">
-                        <option value="hardy">Hardy and Strong</option>
-                        <option value="small">Small and Slender</option>
-                        <option value="middle">Average</option>
+                        <option value="hardy">Hardy and Strong Human</option>
+                        <option value="small">Small and Slender Human</option>
+                        <option value="middle">Average Human</option>
                       </optgroup>
                       <optgroup label="Elf">
                         <option value="winged">Winged Elf</option>
@@ -35,35 +36,34 @@ const Creation = (props) => {
                         <option value="ghoul">Ghoul</option>
                         <option value="skeleton">Skeleton</option>
                       </optgroup>
-                      <optgroup label="Elf">
-                        <option value="winged">Winged Elf</option>
-                        <option value="red">Red Elf</option>
-                        <option value="mystic">Mystic Elf</option>
+                      <optgroup label="Felinus">
+                        <option value="tiger">Tiger-Folk</option>
+                        <option value="lion">Lion-Folk</option>
+                        <option value="panther">Panther-Folk</option>
                       </optgroup>
-                      <optgroup label="Elf">
-                        <option value="winged">Winged Elf</option>
-                        <option value="red">Red Elf</option>
-                        <option value="mystic">Mystic Elf</option>
+                      <optgroup label="Canus">
+                        <option value="fox">Fox-Folk</option>
+                        <option value="dog">Dog-Folk</option>
+                        <option value="wolf">Wolf-Folk</option>
                       </optgroup>
-                      <optgroup label="Elf">
-                        <option value="winged">Winged Elf</option>
-                        <option value="red">Red Elf</option>
-                        <option value="mystic">Mystic Elf</option>
+                      <optgroup label="Reptus">
+                        <option value="salamander">Salamander-Folk</option>
+                        <option value="snake">Snake-Folk</option>
+                        <option value="dragon">Dragon-Folk</option>
                       </optgroup>
-                      <optgroup label="Elf">
-                        <option value="winged">Winged Elf</option>
-                        <option value="red">Red Elf</option>
-                        <option value="mystic">Mystic Elf</option>
+                      <optgroup label="Rodentus">
+                        <option value="rat">Rat-Folk</option>
+                        <option value="mouse">Mouse-Folk</option>
+                        <option value="ferret">Ferret-Folk</option>
                       </optgroup>
-                      <optgroup label="Elf">
-                        <option value="winged">Winged Elf</option>
-                        <option value="red">Red Elf</option>
-                        <option value="mystic">Mystic Elf</option>
+                      <optgroup label="Goblin">
+                        <option value="tinker">Tinker Goblin</option>
+                        <option value="underground">Underground Goblin</option>
+                        <option value="wood">Wood Goblin</option>
                       </optgroup>
-                      <optgroup label="Elf">
-                        <option value="winged">Winged Elf</option>
-                        <option value="red">Red Elf</option>
-                        <option value="mystic">Mystic Elf</option>
+                      <optgroup label="Woodfolk">
+                        <option value="spriggan">Spriggan</option>
+                        <option value="sprite">Sprite</option>
                       </optgroup>
                     </select>
                     <br></br>

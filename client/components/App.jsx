@@ -12,6 +12,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       tab: 0,
+      login: false,
       creationPopup: false,
       creation: {
         race: null
@@ -24,7 +25,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-
+    // find out how to tell if someone is logged in
   }
 
   handleTabs(e, value) {
@@ -91,10 +92,11 @@ class App extends React.Component {
 
         <Miscellaneous
           tab={this.state.tab}
-        />
+          />
 
         <Login_Signup
           tab={this.state.tab}
+          login={this.state.login}
         />
 
       </div>

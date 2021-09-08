@@ -4,6 +4,7 @@ import Character from './Character.jsx';
 import Encounters from './Encounters.jsx';
 import Miscellaneous from './Miscellaneous.jsx';
 import Creation from './Creation.jsx';
+import Login_Signup from './Login_Signup.jsx';
 
 
 class App extends React.Component {
@@ -67,6 +68,7 @@ class App extends React.Component {
             <Tab label='Character Sheet'/>
             <Tab label='Encounter'/>
             <Tab label='Miscellaneous'/>
+            <Tab label='Login_Signup'/>
           </Tabs>
         </AppBar>
 {/* Spaced out for clarity while coding */}
@@ -88,6 +90,10 @@ class App extends React.Component {
         />
 
         <Miscellaneous
+          tab={this.state.tab}
+        />
+
+        <Login_Signup
           tab={this.state.tab}
         />
 

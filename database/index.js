@@ -29,3 +29,18 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   console.log(`Connected to ${uri}`);
 });
+
+const characterSchema = new mongoose.Schema({
+  // id: {type: Number, unique: true},
+  user: String,
+  characterName: String,
+  race: String
+});
+
+characterSchema.index(
+  {'user':1, 'characterName':1},
+  {'unique': true}
+  );
+})
+
+const Game = mongoose.model('Game', moreLikeThisSchema);

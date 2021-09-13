@@ -13,6 +13,7 @@ class App extends React.Component {
     this.state = {
       tab: 0,
       login: false,
+      user: null,
       creationPopup: false,
       creation: {
         race: null
@@ -22,6 +23,7 @@ class App extends React.Component {
     this.toggleCreationPopup = this.toggleCreationPopup.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.toggleLoggedIn = this.toggleLoggedIn.bind(this);
   };
 
   componentDidMount() {
@@ -32,6 +34,19 @@ class App extends React.Component {
     this.setState({
       tab: value
     });
+  }
+
+  toggleLoggedIn() {
+    this.setState({
+      login: !this.state.login
+    });
+  }
+
+  logInUser(userName) {
+    this.setState({
+      login: true,
+      user: userName
+    })
   }
 
   toggleCreationPopup() {
@@ -58,6 +73,8 @@ class App extends React.Component {
     });
     console.log('state:', this.state);
   }
+
+
 
 
   render() {
@@ -97,6 +114,8 @@ class App extends React.Component {
         <Login_Signup
           tab={this.state.tab}
           login={this.state.login}
+          toggleLoggedIn={this.toggleLoggedIn}
+          user={this.state.user}
         />
 
       </div>

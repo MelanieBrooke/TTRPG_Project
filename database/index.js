@@ -30,9 +30,21 @@ db.once('open', function() {
   console.log(`Connected to ${uri}`);
 });
 
+const userSchema = new mongoose.Schema({
+  userName: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true
+  }
+})
+
 const characterSchema = new mongoose.Schema({
   // id: {type: Number, unique: true},
-  user: String,
+  user: Number,
   characterName: String,
   race: String
 });
@@ -43,4 +55,18 @@ characterSchema.index(
   );
 })
 
-const Game = mongoose.model('Game', moreLikeThisSchema);
+const User = mongoose.model('User', userSchema)
+
+const Character = mongoose.model('Character', characterSchema);
+
+const newUser = (userName, password) => {
+
+}
+
+const checkUserNameUnique = (userName) => {
+
+}
+
+const newCharacter = (userName, characterObject) => {
+
+}
